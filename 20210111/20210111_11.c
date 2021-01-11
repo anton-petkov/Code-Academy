@@ -4,15 +4,13 @@
 int posOfMLB(int value)
 
 {
-
     for (int i = 0; value != 0; i++)
     {
-        
-           int p = pow(2, i);
+
+        int p = pow(2, i);
         printf("%i \n", (value & 1) * p);
         printf("\n");
         value >>= 1;
-       
     }
 
     return 0;

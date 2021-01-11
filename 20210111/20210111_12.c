@@ -2,8 +2,7 @@
 
 int vdigniBitna(int value, int position)
 {
-    unsigned int mask = 0x6DB6DB6;
-    
+    unsigned int mask = 0x24924924;
 
     unsigned int result = value | mask;
     return result;
