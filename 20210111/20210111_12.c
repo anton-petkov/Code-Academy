@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-int vdigniBitna(int value, int position)
+int vdigniBitna(int value)
 {
-    unsigned int mask = 0x24924924;
+    unsigned int mask = 0x124; //* this is 100100100
 
     unsigned int result = value | mask;
     return result;
@@ -10,10 +10,10 @@ int vdigniBitna(int value, int position)
 
 int main()
 {
-    int a, b;
-    a = 564;
-    b = 3;
-    printf("%i", vdigniBitna(a, b));
+    int a;
+    a = 564; //*this is 1000110100
+
+    printf("%i", vdigniBitna(a));
 
     return 0;
 }
