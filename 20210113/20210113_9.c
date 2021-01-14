@@ -2,15 +2,15 @@
 
 int main()
 {
-    float a = 4.9876543;
-    double b = 7.123456789012345678890;
+    double a = 4.9876543;
+    long double b = 7.123456789012345678890L;
     long double c = 18398458438583853.28L;
     long double d = 18398458438583853.39875937284928422L;
-
-    printf("%f \n", a);
-    printf("%Lf \n", b);
-    printf("%LG \n", c);
-    printf("%LG \n", d);
+    
+    printf("%.7f \n", a);
+    __mingw_printf("%.22Lf\n", b);
+    __mingw_printf("%17.2Lf\n", c);
+    __mingw_printf("%17.17Lf\n", d);
 
     return 0;
 }
