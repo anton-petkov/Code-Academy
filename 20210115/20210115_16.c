@@ -1,9 +1,9 @@
 #include <stdio.h>
-#define CONST_PI (3.14159)
 
 long double areaOfCircle(int r)
 {
-    return r * r * CONST_PI;
+    const double pi = 3.14159;
+    return r * r * pi;
 }
 
 int main()
