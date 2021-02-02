@@ -32,6 +32,11 @@ void trimStr(char *str)
         {
             strcpy(str2, &str[i + 1]);
         }
+        else
+        {
+            strcpy(str2, &str[i]);
+            break;
+        }
     }
     strcpy(str, str2);
 }
