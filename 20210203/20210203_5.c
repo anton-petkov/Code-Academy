@@ -1,6 +1,7 @@
 #include <stdio.h>
 int main()
 {
+    
     int nValue = 13;
     int *pnValue = NULL;
 
