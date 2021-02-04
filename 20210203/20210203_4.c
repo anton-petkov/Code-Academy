@@ -15,7 +15,7 @@ int binarySearch(int a[], int l, int x)
 {
     int begg = 0, end = l;
 
-    while (end - begg > 1)
+    while (end - begg >= 1)
     {
         int i = begg + (end - begg) / 2;
         if (a[i] == x)
