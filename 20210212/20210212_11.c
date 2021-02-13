@@ -37,9 +37,9 @@ int main(void)
             printf("Participants: \n");
             for (int j = 0; j <= i; j++)
             {
-                printf("Id: %d\n", id[j]);
-                printf("Name: %s\n", name[j]);
-                printf("Family: %s\n", family[j]);
+                 printf("Id: %d , ", id[j]);
+                printf("Name: %s , ", name[j]);
+                printf("Family: %s , ", family[j]);
                 printf("Age: %d\n", age[j]);
             }
             break;
