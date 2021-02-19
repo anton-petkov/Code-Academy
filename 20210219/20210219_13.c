@@ -8,7 +8,9 @@
 началник.*/
 #include <stdio.h>
 #include <stdlib.h>
-
+void fill(struct employee *dataBase, int cMax);
+void getBoss(struct employee *dataBase, struct employee base, int cMax);
+void print(struct employee *dataBase, int cMax);
 struct employee
 {
     int num;
@@ -20,6 +22,17 @@ struct employee
     int years;
     struct employee *boss;
 };
+
+int main(int argc, char *argv[])
+{
+    const int cMax = 3;
+    struct employee base = {0, "No", "", "One", "", 0, 0};
+    struct employee dataBase[cMax];
+    fill(dataBase, cMax);
+    getBoss(dataBase, base, cMax);
+    print(dataBase, cMax);
+    return 0;
+}
 void fill(struct employee *dataBase, int cMax)
 {
     for (int i = 0; i < cMax; i++)
@@ -48,22 +61,18 @@ void getBoss(struct employee *dataBase, struct employee base, int cMax)
         int choise;
 
         printf("Please enter who is boss of employee %s %s who "
-               "is number %d (enter number of the boss)",
+               "is number %d (enter number of the boss, 0 if its no one)",
                dataBase[i].name, dataBase[i].family, dataBase[i].num + 1);
         scanf("%d", &choise);
-        if (choise != 0)
+        if (choise <= 0 || choise > cMax)
         {
-            dataBase[i].boss = &dataBase[choise - 1];
-        }
-        else if (choise > cMax)
-        {
-
             dataBase[i].boss = &base;
         }
+
         else
         {
 
-            dataBase[i].boss = &base;
+            dataBase[i].boss = &dataBase[choise - 1];
         }
         fflush(stdin);
     }
@@ -78,14 +87,4 @@ void print(struct employee *dataBase, int cMax)
                dataBase[i].family, dataBase[i].position, dataBase[i].salary, dataBase[i].years,
                dataBase[i].boss->name, dataBase[i].boss->family);
     }
-}
-int main(int argc, char *argv[])
-{
-    const int cMax = 3;
-    struct employee base = {0, "No", "One", "One", "", 0, 0};
-    struct employee dataBase[cMax];
-    fill(dataBase, cMax);
-    getBoss(dataBase, base, cMax);
-    print(dataBase, cMax);
-    return 0;
 }

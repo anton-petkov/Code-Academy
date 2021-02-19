@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#define BUFSIZE 50
 struct tagDetail
 {
     unsigned m_uAcadId;

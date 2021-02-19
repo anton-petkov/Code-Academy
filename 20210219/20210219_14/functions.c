@@ -29,7 +29,7 @@ void getBoss(struct employee *dataBase, struct employee base, int cMax)
         int choise;
 
         printf("Please enter who is boss of employee %s %s who "
-               "is number %d (enter number of the boss)",
+               "is number %d (enter number of the boss, 0 if its no one)",
                dataBase[i].name, dataBase[i].family, dataBase[i].num + 1);
         scanf("%d", &choise);
         if (choise <= 0 || choise > cMax)

@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
     const int cMax = 3;
-    struct employee base = {0, "No", "One", "One", "", 0, 0};
+    struct employee base = {0, "No", "", "One", "", 0, 0};
     struct employee dataBase[cMax];
     fill(dataBase, cMax);
     getBoss(dataBase, base, cMax);
