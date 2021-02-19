@@ -9,19 +9,19 @@ struct point
 
 int main(int argc, char *argv[])
 {
-    char board[15][15];
-    for (int i = 0; i < 15; i++)
+    int size = 15;
+    char board[size][size];
+    for (int i = 0; i < size; i++)
 
     {
-        for (int j = 0; j < 15; j++)
+        for (int j = 0; j < size; j++)
         {
             board[i][j] = '-';
         }
     }
-    struct point a = {3, 4};
-    struct point b = {9, 9};
-    struct point c = {10, 10};
-    struct point d = {11, 14};
+    struct point a = {1, 2};
+    struct point b = {6, 6};
+
     for (int i = a.x; i <= b.y; i++)
 
     {
@@ -30,18 +30,18 @@ int main(int argc, char *argv[])
             board[i - 1][j - 1] = '@';
         }
     }
-    for (int i = c.x; i <= d.y; i++)
+    for (int i = a.x; i <= b.y; i++)
 
     {
-        for (int j = i; j <= d.y; j++)
+        for (int j = i + b.x + 1; j <= b.y + b.x + 1; j++)
         {
             board[i - 1][j - 1] = '@';
         }
     }
-    for (int i = 0; i < 15; i++)
+    for (int i = 0; i < size; i++)
 
     {
-        for (int j = 0; j < 15; j++)
+        for (int j = 0; j < size; j++)
         {
             printf("%c", board[i][j]);
         }

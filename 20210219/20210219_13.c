@@ -8,9 +8,7 @@
 началник.*/
 #include <stdio.h>
 #include <stdlib.h>
-void fill(struct employee *dataBase, int cMax);
-void getBoss(struct employee *dataBase, struct employee base, int cMax);
-void print(struct employee *dataBase, int cMax);
+
 struct employee
 {
     int num;
@@ -22,7 +20,9 @@ struct employee
     int years;
     struct employee *boss;
 };
-
+void fill(struct employee *dataBase, int cMax);
+void getBoss(struct employee *dataBase, struct employee base, int cMax);
+void print(struct employee *dataBase, int cMax);
 int main(int argc, char *argv[])
 {
     const int cMax = 3;
