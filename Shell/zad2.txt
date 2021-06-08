@@ -2,10 +2,10 @@
 if [ -z $1 ]
 then
     echo "Please type in arguments!"
-    read -p  @
+    read -p "" ARGS
 fi
 
-for i in $@
+for i in $ARGS
 do 
 	touch $i
 done
