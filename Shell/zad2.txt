@@ -1,0 +1,11 @@
+#!/bin/bash 
+if [ -z $1 ]
+then
+    echo "Please type in arguments!"
+    read -p  @
+fi
+
+for i in $@
+do 
+	touch $i
+done
