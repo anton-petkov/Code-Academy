@@ -1,3 +1,10 @@
+#Курсистите се разделят на отбори по двама. От Лекция
+#3 на тема - Структура на една С програма. Побитови
+#оператори всеки отбор взема по една задача и създава
+#скрипт който да подава входни данни(няколко теста) на
+#задачата, програмата извършва изчисленията и връща
+#резултат, като скрипта проверява дали резултатът е
+#правилен. Подават се разнообразни гранични данни,
 #които да съипят програмата. Скрипта проверява за
 #връщане на грешки. На всеки тест скрипта след като го
 #провери връща съобщение “Теста е премината” ако е
@@ -6,37 +13,42 @@
 
 #!/bin/bash
 
-$(gcc ./task4.c -o task4)
+`gcc ./task4.c -o task4`
 
-check_output() {
+check_output () {
 
-    if [[ "$RESULT" == "$OUTPUT" ]]; then
-        echo -e "The result is different from the exp. result. Check your program\n"
-    elif [ "$READ" -ne "0" ]; then
-        echo -e "Please fix your program. The exit status is:  $READ\n"
-    else
-        echo -e "The program is correcr. The exit status is: $READ\n"
-    fi
-}
+     if [[ "$RESULT" == "$OUTPUT" ]]
+     then
+         echo -e "The result is different from the exp. result. Check your program\n"
+     elif [ "$READ" -ne "0" ]
+     then
+         echo -e "Please fix your program. The exit status is:  $READ\n"
+     else
+         echo -e "The program is correcr. The exit status is: $READ\n"
+     fi
+ }
 
-RESULT=$(./task4 42 3)
+
+RESULT=`./task4 42 3`
 ./task4 42 3
 
 READ=$?
 $OUTPUT
 check_output "46"
 
-RESULT=$(./task4 12 4)
+
+RESULT=`./task4 12 4`
 ./task4 12 4
 
 READ=$?
 $OUTPUT
 check_output "12"
 
-RESULT=$(./task4 26 26)
+RESULT=`./task4 26 26`
 ./task4 26 26
 
 READ=$?
 $OUTPUT
 
-check_output "33554458"
+check_output "33554458" 
+
